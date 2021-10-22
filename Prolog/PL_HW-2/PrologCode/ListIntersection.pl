@@ -1,24 +1,22 @@
- Write a program that succeeds if the intersection 
+% Write a program that succeeds if the intersection 
 % of two given list parameters is empty
 
-% intersection : when there are same elements in lists
+% intersection : when there are same element(s) in lists
 
-% Intersection ([1,2,3] , [3,4,5,6]) = False
-% Intersection ([], []) = [] , no intersection so True
-% Intersection ([1], [2,3,4] ) = True 
+% succeeds for empty lists
+intersectionE([],[]).
+%succeeds for one of the empty lists
+intersectionE([],_).
+intersectionE(_,[]).
 
-intersectionReturn ( [], [], []).
-intersectionReturn ( [], _ , []).
-intersectionReturn ( _, [], []).
-intersectionReturn ( [H|T], Y, Z) :-
+% checking for a same element of it is not a member of 
+intersectionE(L1, L2) :-
+    \+ (checkIfmember(X, L1), checkIfmember(X, L2)).
 
-    
-% to return the joined lists together as one list
-joinlists ([], L, L).
-joinlists ([H|T], L1, [H|NewTail]) :-
-    joinlists (T, L1, NewTail).
 
-% to check if an element is repeating or not 
-isRepeating (X, [X|_], [X]).
-isRepeating ( X, [_|Ta], []) :-
-    isRepeating (X, T, [])
+checkIfmember(X,[X|_]).
+checkIfmember(X,[_|Ta]) :-
+    checkIfmember(X, Ta).
+
+
+% references: stackoverflow.com
