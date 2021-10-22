@@ -7,6 +7,6 @@ maxoflist([X],X).
 
 maxoflist([Start|EndTail],X) :-
     maxoflist(EndTail,Y), (Start > Y -> X=Start; Y=X).
-   
+% if else condition to check if the first element is greater than the currentMax   
    
    

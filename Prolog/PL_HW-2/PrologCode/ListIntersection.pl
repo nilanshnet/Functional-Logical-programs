@@ -13,7 +13,7 @@ intersectionE(_,[]).
 intersectionE(L1, L2) :-
     \+ (checkIfmember(X, L1), checkIfmember(X, L2)).
 
-
+% checks if an element is a member of the list
 checkIfmember(X,[X|_]).
 checkIfmember(X,[_|Ta]) :-
     checkIfmember(X, Ta).
