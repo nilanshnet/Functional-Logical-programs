@@ -14,6 +14,7 @@ singlelist :: [a] -> [a]
 singlelist [] = []
 singlelist (x:xs) = [] ++ [ x ] ++ singlelist xs
 
+--- driver code for the program -- 
 --main = do {
 --        print(unionreturn [1,2,3,4] [5,6,76,86]);
 --        print(unionreturn [1,2] []);
