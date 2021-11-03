@@ -1,4 +1,4 @@
--- reverse the list using tail recurssion
+-- reverse the list using recurssion
 
 rev :: [a] -> [a]
 rev list = revHelper list []
